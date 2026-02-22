@@ -1,6 +1,11 @@
 CREATE DATABASE futscript;
-
 \c futscript;
+
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(60) NOT NULL
+);
 
 CREATE TABLE equipos (
     id SERIAL PRIMARY KEY,
