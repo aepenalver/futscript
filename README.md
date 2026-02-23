@@ -27,7 +27,7 @@ git clone https://github.com/aepenalver/futscript.git
 2. Acceder al directorio:
 
 ```bash
-cd sfutscript.git
+cd futscript.git
 ```
 
 3. Instalar las dependencias:
