@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": "150bcf70-8aef-430b-88df-dd4f94ce9b54",
+    "name": "FutScript",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37113324"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/login",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Equipo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzcxODAwMjk0LCJleHAiOjE3NzE4MDM4OTR9.fVHqyoemyLuKoZkyJmXImTswn2PdxO5zaAMAxjOG-2c"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Nuevo Equipo\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/equipos",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["equipos"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get equipos",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/equipos",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["equipos"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Jugador",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzcxODAwMjk0LCJleHAiOjE3NzE4MDM4OTR9.fVHqyoemyLuKoZkyJmXImTswn2PdxO5zaAMAxjOG-2c"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Nuevo Jugador\",\n    \"position\": 4\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/equipos/3/jugadores",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["equipos", "3", "jugadores"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get jugadores",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/equipos/3/jugadores",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["equipos", "3", "jugadores"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Usuarios",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/usuarios",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["usuarios"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Usuarios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/usuarios",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["usuarios"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

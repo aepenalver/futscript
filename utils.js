@@ -12,12 +12,12 @@ const credentialVerification = async (username, password) => {
     rowCount,
   } = await pool.query(query, [username]);
 
-  if (!rowCount) throw { code: 401, message: 'Usuario no encontrado' };
+  if (!rowCount) throw { code: 400, message: 'Usuario no encontrado' };
 
   const passwordVerification = bcrypt.compareSync(password, usuario.password);
 
   if (!passwordVerification) {
-    throw { code: 401, message: 'Password incorrecto' };
+    throw { code: 400, message: 'Password incorrecto' };
   }
   return usuario;
 };
@@ -26,7 +26,7 @@ const tokenValidation = async (req, res, next) => {
   const Authorization = req.header('Authorization');
 
   if (!Authorization) {
-    return res.status(401).send('Token no proporcionado');
+    return res.status(400).send('Token no proporcionado');
   }
 
   const token = Authorization.split('Bearer ')[1];
@@ -38,7 +38,7 @@ const tokenValidation = async (req, res, next) => {
     next();
   } catch (error) {
     console.error('Error en validación de token:', error.message);
-    res.status(401).json({ message: 'Token inválido o expirado' });
+    res.status(400).json({ message: 'Token inválido o expirado' });
   }
 };
 

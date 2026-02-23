@@ -27,4 +27,8 @@ app.post('/equipos', tokenValidation, agregarEquipo);
 app.get('/equipos/:teamID/jugadores', obtenerJugadores);
 app.post('/equipos/:teamID/jugadores', tokenValidation, registrarJugador);
 
-app.listen(PORT, console.log('SERVER ON'));
+if (require.main === module) {
+  app.listen(PORT, () => console.log('SERVER ON'));
+}
+
+module.exports = app;

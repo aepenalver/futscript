@@ -12,7 +12,7 @@ const login = async (req, res) => {
         .json({ message: 'Username y password son requeridos' });
     }
 
-    await credentialVerification({ username });
+    await credentialVerification(username, password);
 
     const token = jwt.sign({ username }, secretKey, {
       expiresIn: process.env.JWT_EXPIRATION || '1h',
